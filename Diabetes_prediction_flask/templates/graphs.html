@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diabetes Prediction|Graphs</title>
+
+    <link rel="stylesheet" href="/static/styles.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      .btn {
+        margin-left: 10%;
+        margin-top: 1%;
+        width: 80%;
+        background-color: white;
+        color: black;
+        border: 2px solid #008cba;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      a:hover {
+        background-color: yellow;
+      }
+
+      .ind_tuber {
+        width: 91%;
+        text-align: center;
+        margin-left: 4.5%;
+        margin-bottom: 3%;
+        margin-top: -1%;
+        font-size: 30px;
+        font-weight: 600;
+
+        background: rgba(50, 248, 113, 0.26);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(0.5px);
+        -webkit-backdrop-filter: blur(0.5px);
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+
+  <br />
+  <br />
+
+  <body id="i_example1">
+    <h1 class="ind_tuber">
+      DIABETES PREDICTION <br />
+      USING DIFFERENT MACHINE LEARNING APPROCHESS
+    </h1>
+    <header>
+      <div class="container">
+        <nav>
+          <ul class="i_list">
+            <li class="i_li"><a href="\index">Home</a></li>
+
+            <li class="i_li">
+              <a class="li" href="\prediction">Prediction</a>
+            </li>
+            <li class="i_li"><a class="\graphs" href="\graphs">Graphs</a></li>
+
+            <li class="i_li">
+              <a class="i_li" href="\password">Change Password </a>
+            </li>
+
+            <li class="i_li"><a class="li" href="\login">Logout</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div>
+      <h3 class="g_title">Random Forest Classifier</h3>
+      <br />
+
+      <h4 class="g_title">Classification Report</h4>
+      <img
+        src="/static/graphs/rfc_cr.png"
+        alt="Image 3"
+        class="g_img"
+      /><br /><br />
+      <h4 class="g_title">Confusion Matrix</h4>
+      <img
+        src="/static/graphs/rfc_cm.png"
+        alt="Image 4"
+        class="g_img"
+      /><br /><br />
+
+      <h3 class="g_title">Support Vector Classifier</h3>
+      <br />
+
+      <h4 class="g_title">Classification Report</h4>
+      <img
+        src="/static/graphs/svc_cr.png"
+        alt="Image 3"
+        class="g_img"
+      /><br /><br />
+      <h4 class="g_title">Confusion Matrix</h4>
+      <img
+        src="/static/graphs/svc_cm.png"
+        alt="Image 4"
+        class="g_img"
+      /><br /><br />
+    </div>
+  </body>
+</html>

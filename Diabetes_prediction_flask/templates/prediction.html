@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Diabetes Prediction|Prediction</title>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css'>
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'>
+
+<link rel="stylesheet" href="/static/styles.css" />
+
+<style type="text/css">
+  body {
+    background-image: url("/static/img/dia_4.avif");
+    margin: 0px 0px 0px 0px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+}
+  .button {
+  background-color: White;
+  border-radius: 5px;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.questions{
+  font-size:20px;
+  color: black;
+  font-weight: bold;
+}
+
+form{
+width:70%;
+margin-left:15%;
+
+background: rgba(255, 255, 255, 0.37);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 2px solid black;
+}
+
+#q2,
+#q8,
+#q9{
+  width: 180px;
+}
+
+.questions{
+  display: inline-block;
+  text-align: left;
+ 
+}
+
+input{
+  width: 200px;
+  text-align: center; 
+  margin-left: 4%;
+}
+
+label, input{
+  display: inline;
+  display: flex;
+}
+
+.ind_tuber{
+    width: 92%;
+    text-align: center;
+    margin-left: 4%;
+    margin-bottom: 3%;
+    margin-top: -1%;
+    
+    background: rgba(50, 248, 113, 0.26);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.5px);
+    -webkit-backdrop-filter: blur(0.5px);
+    border: 2px solid black;
+}
+
+</style>
+
+
+</head>
+<br>
+<br>
+
+<body >
+
+  <h1 class="ind_tuber">DIABETES PREDICTION <br /> USING DIFFERENT MACHINE LEARNING APPROCHESS</h1>
+
+<header id="example1">
+
+	<div class="container">
+
+    <ul class="p_list">
+      
+      <li class="p_li"><a href="\index">Home</a></li>
+      
+      <li class="p_li"><a class="li" href="\prediction">Prediction</a></li>
+      <li class="p_li"><a class="li" href="\graphs">Graphs</a></li>
+      <li class="p_li">
+        <a class="p_li" href="\password">Change Password </a>
+      </li>
+      <li class="p_li"><a class="li" href="\logout">Logout</a></li>
+    </ul>
+
+	</div>
+
+</header>
+
+<form action="\predict" method="post"  enctype="multipart/form-data">
+<center>
+    <h1><bold>DIABETES PREDICTION</bold></h1>
+    <h4>Enter the Answer for all the question</h4>
+    <hr><br>
+   <div class="questions">
+       
+
+    <label for="q1">1) Enter the value of Pregnancies [0 - 17] : </label>
+
+    <input type="number" id="q1" name="q1" min="0" max="17" placeholder = " Pregnancies between 0 - 17 " > 
+
+    <br>
+
+    <label for="q2">2) Enter the value of Glucose [0 - 199] : </label>
+
+    <input type="number" id="q2" name="q2" min="0" max="199" placeholder = " Glucose between 0 - 199 " > 
+
+    <br>
+
+    <label for="q3">3) Enter the value of BloodPressure [0 - 122] :   </label>
+
+    <input type="number" id="q3" name="q3" min="0" max="122" placeholder = " BloodPressure between 0 - 122 " > 
+
+    <br>
+
+    <label for="q4">4) Enter the value of SkinThickness [0 - 99] : </label>
+
+    <input type="number" id="q4" name="q4" min="0" max="99" placeholder = " SkinThickness between 0 - 99 " > 
+
+    <br>
+
+    <label for="q5">5) Enter the value of Insulin [0 - 846] : </label>
+
+    <input type="number" id="q5" name="q5" min="0" max="846" placeholder = " Insulin between 0 - 846 " > 
+
+    <br>
+
+    <label for="q6">6) Enter the value of BMI [0.0 - 67.1] : </label>
+
+    <input type="number" step="0.1" id="q6" name="q6" min="0" max="99" placeholder = " BMI between 0.0 - 67.1 " > 
+
+    <br>
+
+    <label for="q7">7) Enter the value of DiabetesPedigreeFunction [0.078 - 2.42] : </label>
+
+    <input type="number" step="0.001" id="q7" name="q7" min="0.078" max="2.42" placeholder = "DBF between 0.078 - 2.42" >
+
+    <br>
+
+    <label for="q8">8) Enter the value of Age [21 - 81] : </label>
+
+    <input type="number" step="0.01" id="q8" name="q8" min="21" max="81" placeholder = "Age between 21 to 81" >
+
+    <br> 
+
+  </div>
+
+    <br><br>
+
+<input type="submit" class="button" value="Submit"></center>
+<br>
+</div>
+
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js'></script><script  src="./script.js"></script>
+</form>
+<br><br>
+</body>
+</html>
