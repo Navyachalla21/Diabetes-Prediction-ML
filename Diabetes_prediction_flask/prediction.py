@@ -20,7 +20,7 @@ with open(file=rf_model_path, mode="rb") as file:
 with open(file=scaler_path, mode="rb") as file:
     scaler = pickle.load(file=file)
 
-class_labels = ['Positive', "Negative"]
+class_labels = ['Negative', 'Positive']  # 0 = no diabetes, 1 = diabetes
 
 def predict_res(input_data):
     print(f'Input data: {input_data}')
