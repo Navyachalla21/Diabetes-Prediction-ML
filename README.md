@@ -55,30 +55,28 @@ A **Negative** result means the values look similar to patients without diabetes
 The system has two parts: an **offline training pipeline** that builds the model once, and an **online web app** that uses the saved model to answer user requests.
 
 ```mermaid
-flowchart LR
-    subgraph TRAIN["🧪 Offline: Model Training (Jupyter Notebook)"]
-        direction TB
-        A["Pima Indians Diabetes Dataset<br/>768 records, 8 features"] --> B["Data Cleaning and EDA"]
+flowchart TD
+    subgraph TRAIN["Offline - Model Training in Jupyter Notebook"]
+        A["Pima Indians Diabetes Dataset - 768 records, 8 features"] --> B["Data Cleaning and EDA"]
         B --> C["MinMax Scaling"]
         C --> D["SMOTE Class Balancing"]
         D --> E["80/20 Train-Test Split"]
         E --> F["Random Forest"]
         E --> G["SVM"]
-        F --> H["Evaluate: accuracy,<br/>classification report,<br/>confusion matrix"]
+        F --> H["Evaluation - accuracy, classification report, confusion matrix"]
         G --> H
     end
 
-    H -->|"best model saved"| M[("RandomForestClassifier_model.pkl")]
-    C -->|"fitted scaler saved"| S[("scaler.pkl")]
+    H -->|"best model saved"| M["RandomForestClassifier_model.pkl"]
+    C -->|"fitted scaler saved"| S["scaler.pkl"]
 
-    subgraph APP["🌐 Online: Flask Web App on Render"]
-        direction TB
-        U["👤 User in Browser"] -->|"register / login"| R["Flask Routes<br/>app.py"]
-        R --> V["Prediction Form<br/>8 validated inputs"]
+    subgraph APP["Online - Flask Web App on Render"]
+        U["User in Browser"] -->|"register or login"| R["Flask Routes - app.py"]
+        R --> V["Prediction Form - 8 validated inputs"]
         V --> P["prediction.py"]
-        P --> X["Scale input"]
-        X --> Y["Model predicts<br/>0 or 1"]
-        Y --> Z["Result page<br/>Negative / Positive"]
+        P --> X["Scale the input"]
+        X --> Y["Model predicts 0 or 1"]
+        Y --> Z["Result page - Negative or Positive"]
         Z --> U
     end
 
@@ -129,17 +127,18 @@ flowchart LR
 ## 📂 Project Structure
 
 ```
-Diabetes_prediction_flask/
-├── app.py                 # Flask routes: login, register, predict, graphs, password
-├── prediction.py          # Loads model + scaler and returns the prediction
-├── models/
-│   ├── RandomForestClassifier_model.pkl
-│   └── scaler.pkl
-├── templates/             # HTML pages
-├── static/                # CSS, images
-├── Procfile
-├── requirements.txt
-└── README.md
+Diabetes-Prediction-ML/
+├── README.md
+└── Diabetes_prediction_flask/
+    ├── app.py             # Flask routes: login, register, predict, graphs, password
+    ├── prediction.py      # Loads model + scaler and returns the prediction
+    ├── models/
+    │   ├── RandomForestClassifier_model.pkl
+    │   └── scaler.pkl
+    ├── templates/         # HTML pages
+    ├── static/            # CSS, images
+    ├── Procfile
+    └── requirements.txt
 ```
 
 ## 🚀 Run Locally
